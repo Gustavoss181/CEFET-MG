@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#circulo{
+			height: 30px;
+			width: 30px;
+			border-left: black 5px solid;
+			border-bottom: black 5px solid;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+
+<div id="circulo"></div>
+
+
+<script type="text/javascript">
+	var eixoX, eixoY, raio=60, pi=Math.PI;
+	var i=0, time;
+	
+		setInterval( function() {
+			eixoX = 450 + raio*(Math.cos(i*pi/180));
+			eixoY = 200 - raio*(Math.sin(i*pi/180));
+
+			document.getElementById('circulo').style = "margin-left:"+eixoX+"px;margin-top:"+eixoY+"px;";
+			if(i==361){
+				i=0;
+			}else{
+				i++;
+			}
+		}, 1);
+
+</script>
+
+
+
+</body>
+</html>

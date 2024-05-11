@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#bolinha{
+			height: 30px;
+			width: 30px;
+			background-color: black;
+			border-radius: 50%;
+		}
+		body{
+			
+		}
+	</style>
+</head>
+<body>
+
+<div id="bolinha"></div>
+
+<script type="text/javascript">
+// inicio do teste
+
+var S=0, tempo=0, g=10, Sy=0, Sx=0, So, Sox;
+var raio=200, pi=Math.PI;
+
+var tMax = Math.sqrt(2*raio/g);
+var vo = Math.sqrt(2*g*raio);
+
+var aux;
+
+setInterval(function(){
+
+	var t=tempo/100;
+	
+	if(t<=tMax){
+		S = g*t*t/2;
+		Sy = S;
+		Sx = raio - Math.sqrt(raio*raio - Sy*Sy);
+	}
+	else if(t>tMax && t<=tMax*2){
+		Sy = raio;
+		Sx = raio + vo*(t-tMax);
+	}
+	else if(t>tMax*2 && t<=tMax*3){
+		S = vo*(t-tMax*2) - g*(t-tMax*2)*(t-tMax*2)/2;
+		Sy = raio - S;
+		Sx = vo*tMax*2 - raio + Math.sqrt(raio*raio - Sy*Sy);
+	}
+
+	if(t==0){
+		aux=1;
+	}else if(t==Math.round(tMax)*3){
+		aux=-1;
+	}
+
+	tempo+=aux;
+
+	document.getElementById('bolinha').style = "margin-left:"+Sx+"px;margin-top:"+Sy+"px;";
+	if(Sx<raio+3)
+		console.log(Sx);
+}, 1);
+
+// final do teste
+</script>
+
+</body>
+</html>

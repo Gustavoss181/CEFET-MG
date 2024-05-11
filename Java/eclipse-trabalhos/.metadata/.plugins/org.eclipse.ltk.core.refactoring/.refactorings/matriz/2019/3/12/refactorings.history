@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Inline local variable &apos;matriz.main.main().scan&apos; in &apos;matriz.main.main()&apos;&#x0D;&#x0A;- Original project: &apos;matriz&apos;&#x0D;&#x0A;- Original element: &apos;matriz.main.main().scan&apos;" description="Inline local variable &apos;scan&apos;" id="org.eclipse.jdt.ui.inline.temp" input="/src&lt;matriz{main.java" selection="156 29" stamp="1553189869007" version="1.0"/>
+</session>

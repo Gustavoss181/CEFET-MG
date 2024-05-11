@@ -1,0 +1,130 @@
+body{}
+#a1:link{
+	color: red;
+}
+#a1:visited{
+	color: red;
+}
+#a1:hover{
+	background-color: yellow;
+	color: green;
+}
+#a1:active{
+	color: black;
+}
+
+
+
+#a2:link{
+	color: red;
+	text-decoration: none;
+	text-align: center;
+}
+#a2:visited{
+	color: red;
+	padding: 14px 25px;
+	background-color: black;
+}
+#a2:hover{
+	background-color: yellow;
+	color: green;
+	padding: 5px;
+}
+#a2:active{
+	color: white;
+}
+
+
+
+#a3:link, #a3:visited{
+	background-color: #f44336;
+	color: white;
+	border: 20px;
+}
+#a3:hover, #a3:active{
+	background-color: yellow;
+	color: green;
+}
+
+
+
+#a4{
+	color: black;
+	background-color: blue;
+	border-top: 3cm;
+}
+
+
+
+#a5:link{
+	color: blue;
+}
+#a5:visited{
+	color: lightgreen;
+}
+#a5:hover{
+	background-color: red;
+	color: black;
+}
+#a5:active{
+	color: green;
+}
+
+
+
+li{
+	margin: 5px;
+}
+#ban{
+	background-color: yellow;
+	text-align: center;
+	text-shadow: 1px 1px black;
+}
+#maca{
+	background-color: red;
+	text-align: center;
+	text-shadow: 1px 1px black;
+}
+#lim{
+	background-color: green;
+	text-align: center;
+	text-shadow: 1px 1px black;
+}
+#uva{
+	background-color: purple;
+	text-align: center;
+	text-shadow: 1px 1px black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

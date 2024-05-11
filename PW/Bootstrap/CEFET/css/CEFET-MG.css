@@ -1,0 +1,22 @@
+#head{
+  background: url('https://a-static.mlcdn.com.br/618x463/papel-adesivo-azul-escuro-fosco-contact-2-mts-x-45-cm-vulcan/mundobras/71892/d196f0742dba87fbaffdfe8cd48e421e.jpg');
+  padding-bottom: 20px;
+  padding-top: 20px
+}
+#menu{
+  background: url('https://images.pexels.com/photos/953214/pexels-photo-953214.jpeg?cs=srgb&dl=backgrounds-blank-blue-953214.jpg&fm=jpg');
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.car{
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.car:hover{
+  color: white;
+}
+h4{
+  padding-left: 10px;
+  padding-right: 10px;
+}

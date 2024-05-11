@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#bolinha{
+			height: 30px;
+			width: 30px;
+			background-color: black;
+			border-radius: 50%;
+		}
+		body{
+			background-image: url("pista.png");
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body background="">
+
+<div id="bolinha"></div>
+
+<script type="text/javascript">
+// inicio do teste
+
+var S=0, tempo=0, g=10, Sy, Sx, So, Sox;
+var raio=200, pi=Math.PI, angulo;
+
+var So = pi/2*raio;
+var tMax = Math.sqrt(2*So/g)
+var vo = g*tMax;
+
+var vetor = [];
+
+var indice=0, aux=-1;
+
+setInterval(function(){
+	
+	var t = tempo/100;
+
+	if(tempo<=tMax*100){
+		S = (g*(t*t))/2;
+		angulo = S/raio;
+		Sy = raio*Math.sin(angulo);
+		Sx = raio - raio*Math.cos(angulo);
+
+		vetor[tempo] = S;
+
+	}else if(tempo>tMax*100 && tempo<tMax*100*1.5){
+		Sy = raio;
+		Sx =raio + vo*(t-tMax);
+
+		Sox=Sx;
+		console.log(Sx);
+	}else if(tempo>tMax*100*1.5 && tempo<=tMax*100*2.5){
+
+		S = vetor[((Math.round(tMax*100-1)) - indice)];
+		
+		angulo = S/raio;
+		Sy = raio*Math.sin(angulo);
+		Sx = Sox + raio*Math.cos(angulo);
+
+		indice+=aux;
+	}
+
+	if(tempo>=tMax*100*2.5){
+		aux=-1;
+	}else if(S==0 && tempo==0){
+		aux=1;
+	}
+
+	tempo+=aux;
+
+	document.getElementById('bolinha').style = "margin-left:"+Sx+"px;margin-top:"+Sy+"px;";
+		console.log();
+}, 1);
+
+// final do teste
+</script>
+
+</body>
+</html>

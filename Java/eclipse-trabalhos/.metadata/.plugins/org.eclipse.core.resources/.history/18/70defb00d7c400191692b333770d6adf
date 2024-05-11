@@ -1,0 +1,28 @@
+package Onda;
+
+import javax.swing.*;
+
+public class TesteTela extends JFrame{
+	
+	JLabel teste = new JLabel("Teste");
+	
+	public TesteTela() {
+		editarJanela();
+	}
+	
+	public void editarJanela() {
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(650, 300);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setLayout(null);
+		
+		teste.setBounds(0, 0, 20, 100);
+		add(teste);
+	}
+	
+	public static void main(String[] args) {
+		new TesteTela();
+	}
+	
+}

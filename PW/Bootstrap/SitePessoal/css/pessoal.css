@@ -1,0 +1,43 @@
+#parallaxBar{
+    height:750px;
+    background-color: green;
+    background: ;
+    position: relative;
+    z-index: -1;	
+}
+.circle {
+  background-color: #aaa;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.circle img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+#menu{
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+#nome{
+	position: absolute;
+	bottom: 50%;
+	background-color: white;
+	opacity: 0.7;
+	text-align: center;
+	color: ;
+	padding: 20px;
+}
+.card{
+	text-align: center;
+}
+#rodape{
+	background-color: #303030;
+	color: white;
+	padding: 30px;
+}

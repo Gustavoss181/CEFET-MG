@@ -1,0 +1,56 @@
+package Onda;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
+
+import Onda.TesteTela.Movimento;
+
+import javax.swing.JTabbedPane;
+import javax.swing.JLabel;
+import java.awt.Font;
+
+public class Viewer extends JFrame{
+	
+	JPanel[] panel = new JPanel[50];
+	int i=0;
+	
+	public Viewer() {
+		editarJanela();
+		new Movimento().start();
+	}
+	
+	public void editarJanela() {
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(650, 600);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setLayout(null);
+		
+		for(int i=0; i<50; i++) {
+			panel[i].setBorder(new LineBorder(new Color(0, 0, 0), 100, true));
+			panel[i].setBounds(i*5, 300, 5, 5);
+			add(panel[i]);
+		}
+	}
+	
+	public class Movimento extends Thread {
+		public void run() {
+			while(true) {
+				try {sleep(5);}catch(Exception e) {}
+				for(int i=0; i<50; i++) {
+					panel[0].setBounds(panel[i].getX(), 200 + (int)Math.round(100*Math.cos(i*Math.PI/180)), panel[0].getWidth(), panel[0].getHeight());
+					i++;
+				}
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		new Viewer();
+	}
+	
+}

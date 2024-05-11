@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		td{
+			border-left: 2px solid black;
+			border-bottom: 2px solid black;
+		}
+		th{
+			border-left: 2px solid black;
+			border-bottom: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+
+<p id="p01"></p>
+<p id="p02"></p>
+<table>
+	<tr>
+		<th>Nome</th>
+		<th>Sobrenome</th>
+		<th>Idade</th>
+	</tr>
+	<tr>
+		<td id="01"></td>
+		<td id="02"></td>
+		<td id="03"></td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+	var nomeCarro = "Ferrari";
+	document.getElementById("p01").innerHTML = nomeCarro;
+</script>
+
+<script type="text/javascript">
+	var numero = 50;
+	window.alert(numero);
+</script>
+
+<script type="text/javascript">
+	var a=8, b=9, c=4, d=3, media;
+	media=(a+b+c+d)/4;
+	document.getElementById("p02").innerHTML = media;
+</script>
+
+<script type="text/javascript">
+	var nome="Gustavo", sobrenome="Soares Silva", idade=16;
+	document.getElementById("01").innerHTML = nome;
+	document.getElementById("02").innerHTML = sobrenome;
+	document.getElementById("03").innerHTML = idade;
+</script>
+
+</body>
+</html>

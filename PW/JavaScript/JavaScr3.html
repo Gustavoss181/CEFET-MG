@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		img{
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<p id="ficha"></p>
+	<p id="curso"></p>
+<div id="img">
+	<img src="https://www.biography.com/.image/t_share/MTE1ODA0OTcxMjkwNTYwMDEz/michael-jackson-pepsi-commercial-raw.jpg" onclick="TrocarImagem()">
+</div>
+
+<!-- ------------------------------------------ -->
+<script type="text/javascript">
+	var aluno={
+		nome: "Gustavo ",
+		sobrenome: "Soares ",
+		email: "soaressilvag@yahoo.com.br ",
+		idade: "16 ",
+		matricula: "201815TII0211 ",
+		curso: "Informática",
+		Ficha: function(){
+			return document.getElementById("ficha").innerHTML = this.nome +"<br>"+ this.sobrenome +"<br>"+ this.email +"<br>"+ this.idade +"<br>"+ this.matricula +"<br>"+ this.curso;
+		},
+		mostraCurso: function(){
+			return this.curso;
+		}
+		
+	};
+	document.getElementById("ficha").innerHTML = aluno.Ficha();
+	document.getElementById("curso").innerHTML = aluno.mostraCurso();
+</script>
+<script type="text/javascript">
+	 window.alert("Bem-Vindo");
+</script>
+
+<script>
+	function TrocarImagem(){
+		document.getElementById("img").innerHTML = "<img src='http://conteudo.imguol.com.br/2013/04/25/20nov2003---o-cantor-michael-jackson-foi-fichado-apos-ser-acusado-de-molestar-uma-crianca-1366914992855_300x300.jpg'>"
+	}
+</script>
+
+</body>
+</html>

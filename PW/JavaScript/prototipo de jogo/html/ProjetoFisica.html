@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#bolinha{
+			height: 30px;
+			width: 30px;
+			background-color: black;
+			border-radius: 50%;
+		}
+		#fundo{
+			width: 1350px;
+			height: 640px;
+			background-color: lightblue;
+			position: fixed;
+		}
+	</style>
+</head>
+<body style="background-color: black">
+
+<div id="fundo">
+	<div id="bolinha"></div>
+</div>
+
+<script type="text/javascript">
+// inicio do teste
+
+var S=0, angulo=0, g, vo=0, Sx, Sy;
+var raio=300, aux=0.01, t=0, aux2;
+
+setInterval(function(){
+	if(false){
+		Sy = raio;
+		Sx = raio + vo*t;
+		t += aux;
+	}
+	else{
+		if(angulo>Math.PI){
+			angulo = Math.PI;
+			S = Math.PI*raio;
+			vo= 0;
+		}else if(angulo<0){
+			angulo = 0;
+			S = 0;
+			vo= 0;
+		}
+		aux*=-1;
+		g = 9.8*Math.cos(angulo);
+
+		S = S + vo*0.01 + g*Math.pow(0.01, 2)/2;
+		Sy = (610-raio) + raio*Math.sin(angulo);
+		Sx = raio - raio*Math.cos(angulo);
+
+		vo = vo + g*0.01;
+		angulo = S/raio;
+	}
+
+
+	document.getElementById('bolinha').style = "margin-left:"+Sx+"px;margin-top:"+Sy+"px;";
+		console.log(angulo);
+}, 1);
+
+// final do teste
+</script>
+
+</body>
+</html>

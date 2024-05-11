@@ -1,0 +1,53 @@
+package Onda;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
+import javax.swing.JTabbedPane;
+
+public class Viewer {
+
+	private JFrame frame;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Viewer window = new Viewer();
+					for(int i=0; i<100; i++) {
+						window.initialize();
+					}
+					window.frame.setVisible(true);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public Viewer() {
+		
+	}
+
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.WHITE);
+		frame.setBounds(100, 100, 650, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		Motor bolinha = new Motor();
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0), 20, true));
+		panel.setBounds(bolinha.X(), bolinha.Y(), 20, 20);
+		frame.getContentPane().add(panel);
+		
+		
+		
+	}
+}

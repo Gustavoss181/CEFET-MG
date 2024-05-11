@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- <input type="text" name="" id="aa"> -->
+<!-- <button onclick="maiuscula()">Enviar</button> -->
+
+
+<!-- <script type="text/javascript"> -->
+	<!-- function maiuscula(){ -->
+		<!-- var x= document.getElementById("aa").value; -->
+		<!-- window.alert(x.toUpperCase()); -->
+	<!-- } -->
+<!-- </script> -->
+	<div id="div01">
+	<label>Nome:</label><input type="text" name="" id="nome"><br>
+	<label>Email:</label><input type="email" name="" id="email"><br>
+	<label>Senha:</label><input type="password" name="" id="senha"><br>
+	</div>
+	<p id="p01" style="display: none"></p>
+	<button onclick="esconder()">
+		Enviar
+	</button>
+
+<script type="text/javascript">
+	function esconder(){
+		var x = document.getElementById("nome").value + "<br>";
+		x += document.getElementById("email").value + "<br>";
+		x += document.getElementById("senha").value;
+		document.getElementById("p01").innerHTML=x;
+		document.getElementById("div01").style.display="none";
+		document.getElementById("p01").style.display="block";
+	}
+</script>
+
+</body>
+</html>

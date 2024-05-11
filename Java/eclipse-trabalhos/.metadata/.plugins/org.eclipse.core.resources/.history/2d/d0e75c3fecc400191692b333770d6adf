@@ -1,0 +1,22 @@
+package Onda;
+
+import java.lang.Math;
+
+public class Motor {
+	
+	private int eixoY, amplitude=50;
+	private double i=0;
+	
+	public Motor(int i) {
+		this.i = i;
+	}
+	
+	public int Y() {
+		if(i>0)
+			eixoY = (int)Math.round(amplitude*-Math.sin(i*Math.PI/180));
+		
+			i+=50;
+		return eixoY;
+	}
+	
+}

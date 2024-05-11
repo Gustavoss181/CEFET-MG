@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Elementos de formulário</title>
+</head>
+<body>
+	<form name="formPrin" id="formPrin" method="get" action="">
+		<label for="txtNome">Nome:</label>
+		<input type="text" name="txtNome" ><br>
+
+		<label for="txtEmail">Email:</label>
+		<input type="email" name="txtEmail" required=""><br>
+
+		<label for="intNumero">Numero entre 1 e 100:</label>
+		<input type="number" name="txtNumero" min="1" max="100"><br>
+
+		<fieldset>
+			<legend>Sexo</legend>
+		<input type="radio" name="grupoRadio" value="M">Masculino<br>
+		<input type="radio" name="grupoRadio" value="F">Feminino<br>
+		<input type="radio" name="grupoRadio" value="O">Outros<br>
+		</fieldset>
+
+		<input type="checkbox" name="alien">Voce eh um alien?<br>
+		<input type="submit" name="btnEnviar" value="Enviar">
+		<input type="color" name="cor">
+		<input type="datetime-local" name="data">
+
+		<select name="Carros" multiple>
+			<option value="vazio">Selecione o carro</option>
+			<option value="fusca">Fusca</option>
+			<option value="ferrari">Ferrari</option>
+			
+		</select>
+	</form>
+
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<title></title>
+<meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style type="text/css">
+        #img{
+            height: 40px;
+            width: 40px;
+        }
+        #bolinha{
+            height: 40px;
+            width: 40px;
+        }
+        #fundo{
+            height: 640px;
+            background-color: lightblue;
+        }
+        #Ec, #Epg, #Em{
+            width: 15px;
+            margin-left: 5px;
+            display: inline-block;
+        }
+        #Ec{
+            background-color: limegreen;
+        }
+        #Epg{
+            background-color: royalblue;
+        }
+        #Em{
+            background-color: darkgoldenrod;
+        }
+    </style>
+        
+</head>
+<body style="background-color: black">
+
+<div class="container" id="fundo">
+    <div class="row">
+        <div class="col-sm-4">
+            <center>
+            <div id="grafico" style="border: 2px solid black; height: 300px; width: 100px; margin-top: 100px;">
+                <div id="Ec"></div>
+                <div style="background-color: green;" id="Epg"></div>
+                <div style="background-color: orange;" id="Em"></div>
+            </div>
+            </center>
+        </div>
+        <div class="col-sm-8" style="height: 640px;background-image: url('pista2.png');">
+            <div id="bolinha">
+                <img src="skatista(1).png" id="img">
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+var S=0, angulo=0, g, vo=0, Sx, Sy, G=9.8, t=0.025;
+var raio=200, grau;
+var So=raio, aux=1, h=400;
+var m=30, Epg, Ec, Em;
+
+var vel = G*Math.sqrt(2*(h-raio)/G);
+
+h=550-h;    
+Sy = h;
+Epg = m*9.8*(550-Sy)/1000;
+Em = Epg;
+
+setInterval(function(){
+
+
+    if(Sx>raio && Sx<2*raio){
+        Sx+= vo*t;
+        So = Sx;
+    }
+    else{
+        g = G*Math.cos(angulo);
+        Sy = Sy + vo*t*aux + g*Math.pow(t, 2)/2;
+        if(Sy>550-raio){
+            S = S + vo*t + g*Math.pow(t, 2)/2;
+            Sy = (550-raio) + raio*Math.sin(angulo);
+            Sx = So - raio*Math.cos(angulo);
+            angulo = S/raio;
+        }
+        if(angulo > Math.PI){
+            angulo = Math.PI;
+            aux = -1;
+            vo = vel;
+        }else if(angulo<0){
+            angulo = 0;
+            aux = 1;
+            vo = -vel;
+        }
+        vo = vo + g*t;
+    }
+    if(Sy<=h+3 && Sx<=0){
+        document.getElementById("img").src = "skatista(1).png";
+    }
+    else if(Sy<=h+2 && Sx>=3*raio-1){
+        document.getElementById("img").src = "skatistaInvertido(1).png";
+    }
+
+    Epg = m*g*(550-Sy)/1000;
+    if(Epg<0){Epg*=-1;}
+    Ec = m*Math.pow(vo, 2)/2000;
+
+    grau = (angulo*180/Math.PI)*-1 + 90;
+
+    document.getElementById('bolinha').style = "margin-left:"+Sx+"px;margin-top:"+Sy+"px;";
+    document.getElementById("img").style.transform = "rotate("+grau+"deg)";
+    document.getElementById("Ec").style = "height:"+Ec+"px;margin-top:"+(296-Ec)+"px;";
+    document.getElementById("Epg").style = "height:"+Epg+"px;margin-top:"+(296-Epg)+"px;";
+    document.getElementById("Em").style = "height:"+Em+"px;margin-top:"+(296-Em)+"px;";
+        console.log();
+    
+},1)
+             
+</script>
+
+</body>
+</html>

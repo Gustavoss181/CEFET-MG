@@ -1,0 +1,37 @@
+COMANDOS TERMINAL LINUX
+Ctrl+Alt+F1 -> terminal real
+
+clear -> limpar o terminal
+ls -a(todos *ocultos*) -l(longo) -la(todos longo) -d(diretorios) b*(iniciados com b) -> listar
+cd /(dir raiz) ~(dir usuario) ..(volta uma pasta) -> navegar entre diretorios
+cat -> imprimir o conteúdo do arquivo
+mv -> mover/renomear
+rm *(todos) -> remove
+mkdir $nome -> make a directory = criar uma pasta/diretorio
+pwd -> mostrar o diretorio atual
+var= -> criar variavel
+echo -> print
+history -> mostra todos os comandos usados
+sudo setxkbmap -layout br -model abnt2 -> altera o teclado para abnt2
+cut -f(coluna) -d(caractere) -c(caractere) -> cortar
+grep -i [(caracteres)](ignora Caps) -n ""(busca por nome) -> busca algo no arquivo
+tr -d(deletar) -> truncar/cortar/substituir
+date -> mostra a data de hoje
+df -> (disk free) mostra o uso do disco
+who -> mostra os usuários
+vi -> abre o arquivo para edição
+chmod +x(tornar executavel) -> altera premissoes de arquivos
+
+^(primeiro caractere)
+$(ultimo caractere)
+----------------------------------------------------
+ARQUIVOS
+# -> todas as permissões
+iniciado em . -> oculto
+-|---|---|---| -> -/d/@ | rwx | rwx | rwx
+? | usuario | grupo | outros |
+d -> diretório
+l -> link
+r -> ler
+w -> escrever
+x -> executar

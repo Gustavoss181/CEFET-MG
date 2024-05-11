@@ -1,0 +1,37 @@
+body{
+	background-image: url(../imagens/fundo.jpg);
+	color: white;
+}
+#img{
+	width: 350px;
+	height: 100px;
+}
+img{
+	height: 100px;
+	width: 100px;
+}
+#div{
+	width: 690px;
+	height: 450px;
+}
+#center{
+	width: 690px;
+	height: 450px;
+}
+h2{
+	margin-top: 25%;
+}
+p, #h2{
+	color: white;
+}
+#back{
+	position: fixed;
+	right: 20px;
+	bottom: 10px;}
+#bk{
+	height: 100px;
+	width: 100px;
+}
+td{
+	border: 5px solid black;
+}

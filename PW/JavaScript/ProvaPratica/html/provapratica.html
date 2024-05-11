@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		#div{
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+		}
+	</style>
+</head>
+<body id="body">
+<div>
+	<table>
+		<tr>
+			<td id="td1"><img src="../imagens/cafe.jpg" onclick="desaparecer()" oncontextmenu="botaoDireito()"></td>
+			<td id="td2"><img src="../imagens/cracha.jpg" onclick="trocar()" oncontextmenu="botaoDireito()"></td>
+		</tr>
+		<tr>
+			<td id="td3"><img src="../imagens/lista.jpg" onclick="nome()" oncontextmenu="botaoDireito()"></td>
+			<td id="td4"><img src="../imagens/mala.jpg" onclick="mala()" oncontextmenu="botaoDireito()"></td>
+		</tr>
+		<tr>
+			<td id="td5"><img src="../imagens/oculos.jpg" onclick="corDeFundo()" oncontextmenu="botaoDireito()"></td>
+			<td id="td6"><img src="../imagens/tv.jpg" onclick="moverImagem()" oncontextmenu="botaoDireito()"></td>
+		</tr>
+	</table>
+</div>
+<button onclick="loop()">Criar Tabela</button>
+<div id="div2"></div>
+<div id="div"></div>
+
+<script>
+	function botaoDireito(){
+		window.alert("Direitos autorais reservados!!");
+	}
+
+	function desaparecer(){
+		document.getElementById("td1").innerHTML = "";
+	}
+
+	function trocar(){
+		document.getElementById("td2").innerHTML = "<img src='../imagens/cafe.jpg'>"
+	}
+
+	function nome(){
+		document.getElementById("td3").innerHTML = "<h6 style='text-align: center;'>Gustavo Soares</h6>"
+	}
+
+	function mala(){
+		window.alert("Clicou na mala!");
+	}
+	var cont=0;
+	function corDeFundo(){
+		if(cont%2==0){
+			document.getElementById("body").style = "background-color: red;";
+			cont++;
+		}
+		else{
+			document.getElementById("body").style = "background-color: white;";
+			cont++;
+		}
+	}
+
+	function moverImagem(){
+		document.getElementById("td6").innerHTML = "";
+		document.getElementById("div").innerHTML = "<img src='../imagens/tv.jpg'>";
+	}
+
+	function loop(){
+		var x = "<table>";
+		var a=0;
+		for(var i=1; i<=4; i++){
+			x +="<tr>";
+			for(var j=1; j<=5; j++){
+				a++;
+				x +="<td>Imagen_" + a + "</td>";
+			}
+			x +="</tr>";
+		}
+		x +="</table>";
+		document.getElementById("div2").innerHTML = x;
+	}
+
+</script>
+
+
+
+
+</body>
+</html>

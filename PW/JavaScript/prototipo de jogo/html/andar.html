@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+	<style>
+		.cubo{
+			height: 50px;
+			width: 50px;
+			background-color: blue;
+			position: absolute;
+			transition: 0.1s
+		}
+		#solo{
+			margin-top: 250px;
+			border-top: 50px solid green;
+			margin-left: -10px;
+			margin-right: -8px
+		}
+	</style>
+</head>
+
+<body>
+
+<div id="cubo" class="cubo"></div>
+<div id="solo"></div>
+
+</body>
+
+<script>
+	var x=0;
+	var y=200;
+	document.getElementById('cubo').style.left = x+"px";
+	document.getElementById('cubo').style.top = y+"px";
+ 
+	document.querySelector('body').addEventListener('keydown', function(event) {
+
+		var tecla = event.keyCode;
+
+		if(tecla == 39) {
+			
+			x+=10;
+
+		}else if(tecla == 37) {
+			
+	 		x-=10;
+
+		}
+
+		if (x<0) {
+			x=0;
+		}else if (x>1316) {
+			x=1316;
+		}
+
+		document.querySelector('.cubo').style.left = x+"px";
+		document.querySelector('.cubo').style.top = y+"px";
+
+	});
+
+</script>
+
+</html>

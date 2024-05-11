@@ -1,0 +1,22 @@
+body{}
+#h21{
+	visibility: hidden;
+}
+#h22{
+	display: none;
+}
+li{
+	display: inline;
+}
+b{
+	display: block;
+}
+#h1{
+	display: inline;
+}
+#p{
+	display: block;
+}
+
+
+

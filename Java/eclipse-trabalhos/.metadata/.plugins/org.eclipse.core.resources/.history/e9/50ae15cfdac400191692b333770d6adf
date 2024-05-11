@@ -1,0 +1,42 @@
+package Onda;
+
+import java.awt.Color;
+
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+
+public class TesteTela extends JFrame{
+	
+	JPanel panel = new JPanel();
+	
+	public TesteTela() {
+		editarJanela();
+		new Movimento().start();
+	}
+	
+	public void editarJanela() {
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(650, 650);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setLayout(null);
+		
+		panel.setBorder(new LineBorder(new Color(0, 0, 0), 20, true));
+		panel.setBounds(0, 0, 20, 20);
+		add(panel);
+	}
+	
+	public class Movimento extends Thread {
+		public void run() {
+			while(true) {
+				try {sleep(20);}catch(Exception e) {}
+				panel.setBounds(panel.getX()+1, panel.getY(), panel.getWidth(), panel.getHeight());
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		new TesteTela();
+	}
+	
+}

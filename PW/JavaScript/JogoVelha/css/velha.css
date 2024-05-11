@@ -1,0 +1,44 @@
+.img{
+	height: 100px;
+	width: 100px;
+}
+img{
+	height: 100px;
+	width: 100px;
+}
+td{
+	padding:20px;
+	height: 100px;
+	width: 100px;
+}
+#td10,#td12{
+	border-bottom: 5px solid black;
+	border-top: 5px solid black;
+}
+#td01,#td21{
+	border-right: 5px solid black;
+	border-left: 5px solid black;
+}
+#td11{
+	border: 5px solid black;
+}
+#back{
+	position: fixed;
+	right: 20px;
+	bottom: 10px;
+}
+#bk{
+	height: 100px;
+	width: 100px;
+}
+button{
+	border-radius: 12px;
+	padding: 10px 24px;
+	background-color: #e7e7e7;
+	color: black;
+	margin-top: 5px;
+}
+#logo{
+	height: 200px;
+	width: 200px;
+}

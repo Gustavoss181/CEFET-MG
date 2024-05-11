@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/memoria.css">
+</head>
+<body>
+
+<center>
+<img id="img" src="../imagens/logo.png">
+<div id="center">
+<button style="margin-top: 25%;" onclick="Aleatorio()"><h2>Começar<br>Jogo</h2></button>
+</div>
+</center>
+
+<p id="p01">
+	Acertos: 0
+</p>
+<p id="p02">
+	Erros: 0
+</p>
+<a id="back" href="/Users/Gustavo/Documents/%C3%81rea%20de%20Trabalho%20Escolar/PW/JavaScript/jogos/html/jogos.html"><img id="bk" src="../imagens/voltar.svg"></a>
+
+<script>
+	var a=[];
+	var n, x, y, acert=0, err=0;
+	var cont=0;
+	var tabela;
+	var z=0;
+	var time;
+
+	function Aleatorio(){
+		for (var i = 0; i < 24; i++) {
+			a[i]=0;
+		}
+		for (var i = 0; i < 24; i++) {
+			a[i]=1+Math.floor(Math.random() * 24);
+			for (var j = 0; j < i; j++) {
+				if (a[i]==a[j] || a[i]==0) {
+					a[i]=0;
+					i--;
+				}
+			}
+		}
+	acert=0;
+	err=0;
+	document.getElementById("p01").innerHTML = "Acertos: " + acert;
+	document.getElementById("p02").innerHTML = "Erros: " + err;
+
+	tabela = "<div id='div'><table>";
+	for(var i=0;i<4;i++){
+		tabela+="<tr>";
+		for(var j=0;j<6;j++){
+			tabela+="<td id='" + z + "'><img src='../imagens/"+a[z]+".jpg'></td>";
+			z++;
+		}
+		tabela+="</tr>";
+	}
+	tabela+="</table><button onclick='Aleatorio()'>Misturar</button></div>";
+
+	z=0;
+
+	document.getElementById("center").innerHTML = tabela;
+	time = setTimeout(virar, 2000);
+	}
+
+	function virar(){
+	clearTimeout(time);
+	tabela = "<div id='div'><table>";
+	for(var i=0;i<4;i++){
+		tabela+="<tr>";
+		for(var j=0;j<6;j++){
+			tabela+="<td id='" + z + "'><img src='../imagens/frente.jpg' onclick='Verificar(" + z + ")'></td>";
+			z++;
+		}
+		tabela+="</tr>";
+	}
+	tabela+="</table><button onclick='Aleatorio()'>Misturar</button></div>";
+
+	z=0;
+
+	document.getElementById("center").innerHTML = tabela;
+	}
+
+var timer;
+function Verificar(n){
+	
+	if (cont==0){ 
+		x=n;
+		document.getElementById(x).innerHTML = "<img src='../imagens/" + a[x] + ".jpg'>";
+		cont++;
+		return;
+	}
+
+	if(cont==1){
+		y=n;
+		document.getElementById(y).innerHTML = "<img src='../imagens/" + a[y] + ".jpg'>";
+		timer = setTimeout(verif, 500);
+}
+
+function verif(){
+		clearTimeout(timer);
+		if(a[x]%2!=0 && a[x]+1==a[y]){
+			acert++;
+			document.getElementById("p01").innerHTML = "Acertos: " + acert;
+		}
+		else if(a[y]%2!=0 && a[y]+1==a[x]){
+			acert++;
+			document.getElementById("p01").innerHTML = "Acertos: " + acert;
+		}
+		else{
+			document.getElementById(x).innerHTML = "<img src='../imagens/frente.jpg' onclick='Verificar(" + x + ")'></td>";
+			document.getElementById(y).innerHTML = "<img src='../imagens/frente.jpg' onclick='Verificar(" + y + ")'></td>";
+			err++;
+			document.getElementById("p02").innerHTML = "Erros: " + err;
+		}
+		cont=0;
+		if(acert==12){
+			document.getElementById("div").innerHTML="<h2 id='h2'>VOCÊ VENCEU!!!</h2><button onclick='Aleatorio()'>Jogar novamente?</button><br><br>Erros:"+ err;
+			document.getElementById("p01").innerHTML = "";
+			document.getElementById("p02").innerHTML = "";
+		}
+		return;
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+	<style>
+		.cubo{
+			height: 50px;
+			width: 50px;
+			background-color: blue;
+			position: absolute;
+			left: 50px;
+			transition: 1s
+		}
+		.obs{
+			height: 50px;
+			width: 50px;
+			background-color: red;
+			position: absolute;
+			top: 200px;
+		}
+		#solo{
+			margin-top: 250px;
+			border-top: 50px solid green;
+			margin-left: -10px;
+			margin-right: -8px
+		}
+	</style>
+</head>
+
+<body>
+
+<div id="cubo" class="cubo"></div>
+<div id="obs" class="obs"></div>
+<div id="solo"></div>
+
+</body>
+
+<script>
+	var x=1316;
+	var y=200;
+	var width=50;
+	document.getElementById('cubo').style.top = y+"px";
+
+	// movimento do obstaculo
+	setInterval(function() {
+		x-=10;
+		document.getElementById("obs").style.transition = "0.1s";
+		if (x<-50) {
+			x=1365;
+			document.getElementById("obs").style.transition = "0s";
+		}else if (x>1366) {
+			x=1315;
+		}
+		document.querySelector('.obs').style.left = x+"px";
+
+	}, 50);
+
+	// movimento do cubo
+	document.querySelector('body').addEventListener('keydown', function(event) {
+
+		var tecla = event.keyCode;
+
+		if(tecla == 32) {
+			y=100;
+			document.querySelector('.cubo').style.top = y+"px";
+			setTimeout(function() {
+				y=200;
+				document.querySelector('.cubo').style.top = y+"px";
+			}, 800);
+		}
+		document.querySelector('.cubo').style.top = y+"px";
+
+	});
+
+</script>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1 style="display: inline;">Média: </h1>
+	<h1 id="h" style="display: inline;"></h1>
+	<p id="pessoa"></p>
+	<p id="mult"></p>
+	<p id="divi"></p>
+<!-- -------------------------------------------------------- -->
+	
+	<script type="text/javascript">
+		function Media(a,b,c){
+			return (a+b+c)/3;
+		}
+		document.getElementById("h").innerHTML=Media(2,6,10);
+	</script>
+	<script type="text/javascript">
+		function Pessoa(nome,sobrenome,idade){
+			return (nome+" "+sobrenome+" "+idade);
+		}
+		document.getElementById("pessoa").innerHTML=Pessoa("Gustavo","Soares","16");
+	</script>
+	<script type="text/javascript">
+		var x, y, soma;
+		function Multi(a,b){
+			return a*b;
+		}
+		function Divi(a,b){
+			return a/b;
+		}
+		x=Multi(10,5);
+		y=Divi(10,5);
+		soma=x+y;
+		window.alert(soma);
+		document.getElementById("mult").innerHTML=Multi(10,5);
+		document.getElementById("divi").innerHTML=Divi(10,5);
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<link rel="stylesheet" type="text/css" href="../css/CEFET-MG.css">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=defice-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="head" class="container">
+	<a href="http://www.cefetmg.br/index.html"><img src="http://www.cefetmg.br/galeria/imagens/Pagina_CEFET_Logo-Topo.png" class="img-fluid" alt="Imagem responsiva"></a>
+</div>
+
+	<!-- ------------------------------------------------------------------------------------------------------ -->
+
+<div class="container">
+	<div id="mainmenu" class="row">
+          <div class="list-group panel visible-md visible-lg">
+              <a href="#" class="list-group-item"><i class="glyphicon glyphicon-home"></i></a>
+          </div>
+          <div class="list-group panel">
+            <a href="#menupos1" class="list-group-item" data-toggle="collapse" data-parent="#mainmenu">Pos1 <span class="menu-ico-collapse"><i class="glyphicon glyphicon-chevron-down"></i></span></a>
+            <div class="collapse pos-absolute" id="menupos1">
+              <a href="#submenu1" class="list-group-item sub-item" data-toggle="collapse" data-parent="#submenu1">SubPos1 <span class=" menu-ico-collapse"><i class="glyphicon glyphicon-chevron-down"></i></span></a>
+                  <div class="collapse list-group-submenu" id="submenu1">
+                    <a href="#" class="list-group-item sub-sub-item" data-parent="#submenu1">SubSubPos1</a>
+                    <a href="#" class="list-group-item sub-sub-item" data-parent="#submenu1">SubSubPos2</a>
+                    <a href="#" class="list-group-item sub-sub-item" data-parent="#submenu1">SubSubPos3</a>
+                    <a href="#" class="list-group-item sub-sub-item" data-parent="#submenu1">SubSubPos4</a>
+                  </div>
+             <a href="#" data-toggle="collapse" data-target="#menupos1" class="list-group-item sub-item">SubPos2</a>
+             <a href="#" data-toggle="collapse" data-target="#menupos1" class="list-group-item sub-item">SubPos3</a>
+             <a href="#" data-toggle="collapse" data-target="#menupos1" class="list-group-item sub-item">SubPos4</a>
+             <a href="#" data-toggle="collapse" data-target="#menupos1" class="list-group-item sub-item">SubPos5</a>                                                                    
+              </div>
+            </div>
+
+	</div>
+</div>
+</body>
+</html>

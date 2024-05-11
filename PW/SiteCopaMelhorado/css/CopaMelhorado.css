@@ -1,0 +1,129 @@
+*{margin: 0; padding: 0;} 
+body{
+	font-family: arial, helvetica, sans-serif;
+font-size: 12px;
+
+}
+.menu{
+	background-color: dodgerblue;
+	margin: auto;
+	width: 99%;
+	margin-left: 8px;
+	display: block;
+	position: fixed;
+	top: 0;
+}
+.menu h1{
+	text-align: center;
+	margin: 15px;
+	margin-left: 500px;
+	display: inline-block;
+	text-decoration: 
+}
+.menu img{
+	height: 100px;
+	width: 100px;
+	float: right;
+}
+.div{
+	color: black;
+	background-color:  white;
+	margin-left: 250px;
+	margin-right: 250px;
+	margin-top: 120px;
+	border: solid  white 20px;
+	border-right: solid white 100px;
+	border-left: solid  white 100px;
+	font-size: 13px;
+}
+.div h2{
+	text-align: center;
+	margin-bottom: 10px;
+}
+.div img{
+	height: 150px;
+	width: 300px;
+}
+.div p{
+	margin-top: 5px;
+	text-indent: 30px;
+	margin-bottom: 10px;
+}
+#rodape{
+	background-color: dodgerblue;
+	margin: auto;
+	width: 99%;
+	margin-left: 8px;
+	display: block;
+	position: fixed;
+	bottom: 0;
+	height: 20px;
+}
+
+#ul{
+	padding: 0;
+	list-style: none;
+	margin-left: 30px;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+ul li{
+	display: block;
+	position: relative;
+	float: left;
+	color: blue;
+	background-color: lightblue;
+}
+li ul{
+	display: none;
+}
+ul li a{
+	display: block;
+	text-decoration: none;
+	color: #000;
+	border: 1px solid black;
+	padding: 5px 15px 5px 15px;
+	background-color: lightblue;
+}
+ul li a:hover{
+	background-color: blue;
+	color: white;
+}
+li:hover ul{
+	display: block;
+	position: absolute;
+}
+li:hover li{
+	float: none;
+	font-size: 15px;
+}
+li:hover a{
+	background:lightblue; 
+}
+li:hover li a:hover{
+	background: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

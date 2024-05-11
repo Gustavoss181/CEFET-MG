@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;SimulacaoEnergias/src/Viewer&apos;&#x0D;&#x0A;- Original project: &apos;ProjetoFisica&apos;&#x0D;&#x0A;- Destination element: &apos;SimulacaoEnergias/src/Viewer&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     pista2.png&#x0D;&#x0A;     skatista(1).png" description="Copy files" destination="=SimulacaoEnergias/src&lt;Viewer" element1="src/pista2.png" element2="src/skatista(1).png" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1569507052179" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/jackpot.css">
+</head>
+<body>
+
+<audio>
+	<source src="../audio/smile.mp3" type="audio/mpeg">
+</audio>
+
+<center>
+	<img id="img" src="../imagens/jackpot_logo.png">
+	<table class="div">
+		<tr>
+			<td class="td"><img id="x" src="../imagens/1.png"></td>
+			<td class="td"><img id="y" src="../imagens/1.png"></td>
+			<td class="td"><img id="z" src="../imagens/1.png"></td>
+			<td class="lever" id="lever"><img src="../imagens/lever.png" onclick="a()"></td>
+		</tr>
+	</table>
+	<div>
+		<h3 id="money">Dinheiro: R$5,00</h3>
+		<table>
+			<tr>
+				<th>Frutas</th>
+				<th>Valor</th>
+				<th>Frutas</th>
+				<th>Valor</th>
+			</tr>
+			<tr>
+				<td>2 Cerejas</td>
+				<td>R$1,00</td>
+				<td>3 Cerejas</td>
+				<td>R$3,00</td>
+			</tr>
+			<tr>
+				<td>2 Maçãs</td>
+				<td>R$2,00</td>
+				<td>3 Maçãs</td>
+				<td>R$6,00</td>
+			</tr>
+			<tr>
+				<td>2 Abacaxis</td>
+				<td>R$3,00</td>
+				<td>3 Abacaxis</td>
+				<td>R$9,00</td>
+			</tr>
+			<tr>
+				<td>2 Pêras</td>
+				<td>R$4,00</td>
+				<td>3 Pêras</td>
+				<td>R$12,00</td>
+			</tr>
+			<tr>
+				<td>2 Setes</td>
+				<td>R$5,00</td>
+				<td>3 Setes</td>
+				<td>R$15,00</td>
+			</tr>
+		</table>
+	</div>
+</center>
+<a id="back" href="/Users/Gustavo/Documents/%C3%81rea%20de%20Trabalho%20Escolar/PW/JavaScript/jogos/html/jogos.html"><img id="bk" src="../imagens/voltar.svg"></a>
+<script>
+	var x, y, z;
+	var money=5, timer, contador=0;
+	document.getElementById("money").innerHTML = "Dinheiro: R$"+money+",00";
+	
+	function a(){
+		clearTimeout(timer);
+		document.getElementById("lever").innerHTML = "<img src='../imagens/lever2.png'>"
+		document.getElementById("x").src = "../imagens/2.png";
+		document.getElementById("y").src = "../imagens/3.png";
+		document.getElementById("z").src = "../imagens/4.png";
+		timer = setTimeout(b, 50);
+	}
+	function b(){
+		clearTimeout(timer);
+		document.getElementById("x").src = "../imagens/3.png";
+		document.getElementById("y").src = "../imagens/4.png";
+		document.getElementById("z").src = "../imagens/5.png";
+		timer = setTimeout(c, 50);
+	}
+	function c(){
+		clearTimeout(timer);
+		document.getElementById("x").src = "../imagens/4.png";
+		document.getElementById("y").src = "../imagens/5.png";
+		document.getElementById("z").src = "../imagens/1.png";
+		timer = setTimeout(d, 50);
+	}
+	function d(){
+		clearTimeout(timer);
+		document.getElementById("x").src = "../imagens/5.png";
+		document.getElementById("y").src = "../imagens/1.png";
+		document.getElementById("z").src = "../imagens/2.png";
+		timer = setTimeout(e, 50);
+	}
+	function e(){
+		clearTimeout(timer);
+		if(contador<8){
+		document.getElementById("x").src = "../imagens/1.png";
+		document.getElementById("y").src = "../imagens/2.png";
+		document.getElementById("z").src = "../imagens/3.png";
+			contador++;
+			timer = setTimeout(a, 50);
+		}
+		else{
+			contador=0;
+			timer = setTimeout(animacao, 50);
+		}
+	}
+	function animacao(){
+		clearTimeout(timer);
+		if(money==0){
+			window.alert("Voce perdeu seu dinheiro. Reinicie para voltar a jogar.")
+		}
+		else{
+			money--;
+			timer = setTimeout(sortear, 10);
+		}
+	}
+
+	function sortear(){
+		clearTimeout(timer);
+		document.getElementById("lever").innerHTML = "<img src='../imagens/lever.png' onclick='a()'>"
+		x=1+Math.floor(Math.random()*5);
+		y=1+Math.floor(Math.random()*5);
+		z=1+Math.floor(Math.random()*5);
+		document.getElementById("x").src = "../imagens/"+ x +".png";
+		document.getElementById("y").src = "../imagens/"+ y +".png";
+		document.getElementById("z").src = "../imagens/"+ z +".png";
+		if(x==y && x==z){
+			cont=x+y+z;
+			money+=cont;
+			if(cont==15){
+				window.alert("Prêmio máximo");
+			}
+		}
+		else if(x==y){
+			cont=(x+y)/2;
+			money+=cont;
+		}
+		else if(x==z){
+			cont=(x+z)/2;
+			money+=cont;
+		}
+		else if(y==z){
+			cont=(y+z)/2;
+			money+=cont;
+		}
+		else{
+			
+		}
+		document.getElementById("money").innerHTML = "Dinheiro: R$"+money+",00";
+		document.getElementById("money").innerHTML = "Dinheiro: R$"+money+",00";
+	}
+</script>
+</body>
+</html>

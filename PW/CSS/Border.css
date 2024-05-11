@@ -1,0 +1,15 @@
+body{}
+#p1{
+	border: 10px dotted red;
+}
+#p2{
+	border: 10px solid blue;
+}
+#p3{
+	border: 10px solid red;
+	border-radius: 5px;
+}
+#p4{
+	border: 10px solid;
+	border-color: red white black white;
+}

@@ -1,0 +1,46 @@
+package OndaTeste;
+
+import java.awt.EventQueue;
+import java.util.Random;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
+import javax.swing.JTabbedPane;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JToggleButton;
+import javax.swing.SwingConstants;
+import javax.swing.JTextPane;
+import javax.swing.JSlider;
+import java.awt.SystemColor;
+
+public class Control extends JFrame{
+	
+	
+	
+	public Control() {
+		editarJanela();
+	}
+	
+	public void editarJanela() {
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(500, 300);
+		getContentPane().setBackground(Color.WHITE);
+		getContentPane().setLayout(null);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		
+		
+	}
+
+	
+	
+	public static void main(String[] args) {
+		new Control();
+	}
+}

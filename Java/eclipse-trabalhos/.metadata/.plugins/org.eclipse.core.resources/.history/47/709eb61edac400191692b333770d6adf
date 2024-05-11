@@ -1,0 +1,38 @@
+package Onda;
+
+import javax.swing.*;
+
+public class TesteTela extends JFrame{
+	
+	JLabel teste = new JLabel("Teste");
+	
+	public TesteTela() {
+		editarJanela();
+		new Movimento().start();
+	}
+	
+	public void editarJanela() {
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(650, 300);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setLayout(null);
+		
+		teste.setBounds(0, 0, 50, 20);
+		add(teste);
+	}
+	
+	public class Movimento extends Thread {
+		public void run() {
+			while(true) {
+				try {sleep(20);}catch(Exception e) {}
+				teste.setBounds(teste.getX()+1, teste.getY(), teste.getHeight(), teste.getWidth());
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		new TesteTela();
+	}
+	
+}

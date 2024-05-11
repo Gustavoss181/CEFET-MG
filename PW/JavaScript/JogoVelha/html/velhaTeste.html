@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/velha.css">
+</head>
+<body>
+<center>
+	<div id="tabela">
+		<button onclick="criarTabela()">mostrar tabela</button>
+	</div>
+	<div id="teste"></div>
+</center>
+<a id="back" href="/Users/Gustavo/Documents/%C3%81rea%20de%20Trabalho%20Escolar/PW/JavaScript/jogos/html/jogos.html"><img id="bk" src="../imagens/frente.jpg"></a>
+<script>
+	var tabu, img=0;
+	var x,y;
+
+	var tabela = new Array(3);
+	for(var a=0; a < 3; a++) {
+		tabela[a] = new Array(3);
+	}
+
+
+	function criarTabela(){
+		tabu="<table>";
+		for(var i=0;i<3;i++){
+			tabu+="<tr>";
+			for(var j=0;j<3;j++){
+				tabu+="<td id='"+i+j+"'><div class='img' onclick='jogo("+i+","+j+")'></div></td>";
+				tabela[i][j]=0;
+			}
+			tabu+="</tr>";
+		}
+		tabu+="</table>";
+		document.getElementById("tabela").innerHTML = tabu;
+	}
+
+	function jogo(x,y){
+		var indice=x+""+y;
+		x = parseInt(x);
+		y = parseInt(y);
+		if (img%2==0) {
+				document.getElementById(indice).innerHTML = "<img src='../imagens/1.jpg'>";
+				tabela[x][y]=1;
+			}
+			else{
+				document.getElementById(indice).innerHTML = "<img src='../imagens/4.jpg'>";
+				tabela[x][y]=4;
+			}
+		if(img<8){		
+			img++;
+			verifica();
+		}else{
+			document.getElementById("teste").innerHTML = "Deu velha";
+		}
+	}
+
+	function verifica(){
+		var somaL, somaC;
+		console.log(tabela.toString());
+		for(var i=0;i<3;i++){
+			somaL=0;
+			somaC=0;
+			for(var j=0;j<3;j++){
+				somaC+=tabela[i][j];
+				somaL+=tabela[j][i];
+			}
+			if(somaL==3 || somaC==3){
+				document.getElementById("teste").innerHTML = "Jogador 1 venceu";
+			}
+			else if(somaL==12 || somaC==12){
+				document.getElementById("teste").innerHTML = "Jogador 2 venceu";
+			}
+		}
+	}
+
+</script>
+
+</body>
+</html>

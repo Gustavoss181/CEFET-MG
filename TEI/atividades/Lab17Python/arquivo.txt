@@ -1,0 +1,7 @@
+Nova Revisao: 12345
+Nova Revisao: 11111
+Revisão Nova: 22222
+X-Sieve: CMU Sieve 2.3
+X-DSPAM-Result: Innocent
+X-: Very Short
+X-Plane is behind schedule: two weeks

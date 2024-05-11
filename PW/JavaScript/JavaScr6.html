@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div{display: inline;}
+	</style>
+</head>
+<body>
+
+<h1>Horas</h1>
+
+<div id="div1">
+	<button onclick="hora01()">
+		<img src="https://images-americanas.b2w.io/spacey/2016/11/10/relogiodeparede.jpg" style="height: 300px">
+	</button>
+</div>
+<div id="div2">
+	<button onclick="hora02()">
+		<img src="https://www.newgreenfil.com/img/uploads/480x480_1640bbd1542553fb22e15a83e6c6a25c.jpg" style="height: 300px">
+	</button>
+</div>
+<div id="div3">
+	<button onclick="hora03()">
+		<img src="http://www.compraevendadeantiguidades.com/wp-content/uploads/2017/03/relogios_08.jpg" style="height: 300px">
+	</button>
+</div>
+<div id="div4">
+	<button onclick="hora04()">
+		<img src="http://etc.usf.edu/clipart/34200/34284/nclock-11-30_34284_md.gif" style="height: 300px">
+	</button>
+</div>
+<script>
+
+function hora01(){
+	document.getElementById("div1").innerHTML = "  |Uma hora e cinquenta minutos|  ";
+}
+function hora02(){
+	document.getElementById("div2").innerHTML = "  |Dez horas e dez minutos|  ";
+}
+function hora03(){
+	document.getElementById("div3").innerHTML = "  |Quatro horas e quarenta e tres minutos|  ";
+}
+function hora04(){
+	document.getElementById("div4").innerHTML = "  |Onze horas e trinta minutos|  ";
+}
+
+</script>
+
+<h1>Calculadora</h1>
+<label>Numero: <input type="text" name="" id="num"></label>
+<label>Expoente: <input type="text" name="" id="exp"></label>
+<button onclick="Potencia()">Potencia</button>
+<button onclick="Raiz()">Raiz do numero</button>
+<p id="p01"></p>
+
+<script type="text/javascript">
+	var x, e;
+	
+	function Potencia(){
+		var result;
+		
+		x = document.getElementById("num").value;
+		e = document.getElementById("exp").value;
+		
+		result=Math.pow(x,e);
+		document.getElementById("p01").innerHTML = result;
+	}
+	function Raiz(){
+		var result;
+		
+		x = document.getElementById("num").value;
+		
+		result=Math.sqrt(x);
+		document.getElementById("p01").innerHTML = result;
+	}
+
+</script>
+
+<h1>Mostrar a data</h1>
+<p id="pdata"></p>
+<button onclick="MostrarData()">Mostrar data</button>
+
+<script type="text/javascript">
+function MostrarData(){
+var x = new Date();
+document.getElementById("pdata").innerHTML = x.getDate() + "/" + x.getMonth() + "/"+ x.getFullYear() + " " + x.getHours() + ":" + x.getMinutes();
+}
+
+</script>
+
+
+
+
+
+</body>
+</html>

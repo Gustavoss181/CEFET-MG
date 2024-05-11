@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.div{
+			height: 100px;
+			width: 100px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+<center>
+<h1>Escolha uma Cor</h1>
+<div>
+<div class="div" id="1" onclick="Aleatorio(1)" style="background-color: red"></div>
+<div class="div" id="2" onclick="Aleatorio(2)" style="background-color: blue"></div>
+<div class="div" id="3" onclick="Aleatorio(3)" style="background-color: green"></div>
+<div class="div" id="4" onclick="Aleatorio(4)" style="background-color: yellow"></div>
+<div class="div" id="5" onclick="Aleatorio(5)" style="background-color: orange"></div>
+</div>
+</center>
+
+<p id="p1">Usuario: 0</p>
+<p id="p2">Computador: 0</p>
+
+<script>
+	var a, user=0, comp=0;
+
+	function Aleatorio(a){
+		var b;
+		b = 1+Math.floor(Math.random()*5)
+		if(a==b){
+			window.alert("Acertou");
+			user++;
+			document.getElementById("p1").innerHTML = "Usuario: " + user;
+			if (user==3) {
+				window.alert("Voce Ganhou!!!");
+				comp=0;
+				user=0
+				document.getElementById("p1").innerHTML = "Usuario: " + user;
+				document.getElementById("p2").innerHTML = "Computador: " + comp;	
+			}
+		}
+		else{
+			window.alert("Errou");
+			comp++;
+			document.getElementById("p2").innerHTML = "Computador: " + comp;
+			if(comp==3){
+				window.alert("Voce Perdeu!!!");
+				comp=0;
+				user=0
+				document.getElementById("p1").innerHTML = "Usuario: " + user;
+				document.getElementById("p2").innerHTML = "Computador: " + comp;
+			}
+		}
+	}
+</script>
+
+
+
+
+
+</body>
+</html>

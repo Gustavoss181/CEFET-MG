@@ -1,0 +1,27 @@
+body{}
+
+h1{
+margin-left: 20px;
+color: red;
+}
+#p1{
+	margin: 25px;
+}
+h2{
+	margin-left: 50px;
+	margin-right: 25px;
+}
+#p2{
+	padding: 30px;
+}
+#p3{
+	padding: 50px;
+}
+#p4{
+	width: 200px;
+	padding: 50px;
+}
+
+
+
+

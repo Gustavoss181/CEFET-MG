@@ -1,0 +1,24 @@
+body{
+	background-size: 100%
+}
+h1{
+	text-align: center;
+	margin: 15px;
+}
+#jog{
+	height: 200px;
+	width: 150px;
+	display: inline;
+}
+#time{
+	height: 200px;
+	width: 300px;
+	margin-bottom: 50px;
+}
+#externa{
+	border: 3px solid black;
+	margin-left: 200px;
+	margin-right: 200px;
+	background-color: white;
+	margin-top: 120px;
+}

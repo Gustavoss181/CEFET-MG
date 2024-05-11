@@ -1,0 +1,35 @@
+body{}
+#tab1{
+	border: 2px solid red;
+}
+div{
+	width: 100%;
+}
+#tab2{
+	border-collapse: collapse;
+	width: 100%;
+}
+#tab3{
+	text-align: center;
+	border-bottom: 1px solid black;
+}
+#tabcab{
+	color: blue;
+}
+#tab4:nth-child(even){
+	background-color: lightgray;
+}
+#tab4:hover{
+	background-color: orange;
+}
+
+
+
+
+
+
+
+
+
+
+

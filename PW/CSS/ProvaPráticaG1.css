@@ -1,0 +1,58 @@
+body{
+	background-color: lightgray;
+}
+h1{
+	border: 2px solid black;
+	margin: auto;
+	max-width: 50%;
+	text-align: center;
+	background-color: lightblue;
+}
+ol{
+	margin:;
+	padding:;
+	overflow: hidden;
+	background-color: #333333: 
+}
+li{
+	display: block;
+}
+li:hover{
+	text-decoration-color: blue;
+	color: blue;
+}
+img{
+	height: 30px; 
+	width: 50px;
+}
+#tabcab{
+	color: red;
+}
+th{
+	border: 1px solid black;
+}
+td{
+	border: 1px solid black;
+	text-align: center;
+}
+tr:nth-child(even){
+	background-color: orange;
+	border-bottom: 1px solid black;
+}
+s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

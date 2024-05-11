@@ -1,0 +1,138 @@
+package OndaTeste;
+
+import java.awt.EventQueue;
+import java.util.Random;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+
+import java.awt.Color;
+import javax.swing.border.LineBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Viewer extends JFrame{
+	
+	int nAtomos = 100, cont=0;
+	JPanel[] panel = new JPanel[nAtomos];
+	Motor[] atomo = new Motor[nAtomos];
+	JButton menos = new JButton("<");
+	JButton mais = new JButton(">");
+	JSlider slider = new JSlider();
+	JLabel label = new JLabel("1.50Hz");
+	
+	public Viewer() {
+		editarJanela();
+		new Movimento().start();
+	}
+	
+	public void editarJanela() {
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(1360, 500);
+		getContentPane().setBackground(Color.WHITE);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		getContentPane().setLayout(null);
+		setExtendedState(MAXIMIZED_BOTH);
+	
+		objetos();
+		actions();
+		
+	}
+
+	public class Movimento extends Thread {
+		public void run() {
+			while(true) {
+				try {sleep(2);}catch(Exception e) {}
+				move();
+			}
+		}
+	}
+	
+	public void move() {
+		for(int i=0; i<nAtomos; i++) {
+			panel[i].setBounds(panel[i].getX(), 350 + atomo[i].Y(), panel[i].getWidth(), panel[i].getHeight());
+		}
+		if(cont != 0 && cont<nAtomos*40 && cont%40==0)
+			atomo[cont/40].setFrequencia(atomo[cont/40-1].frequencia);
+		
+		cont++;
+	}
+	
+	public void objetos() {
+	//Controle
+		//Botoes
+		menos.setBounds(30+100, 30+500, 50, 50);
+		mais.setBounds(180+100, 30+500, 50, 50);
+		//Barra de deslizamento
+		slider.setValue(50);
+		slider.setMaximum(100);
+		slider.setMinimum(0);
+		slider.setPaintTicks(true);
+		slider.setBounds(30+100, 83+500, 190, 40);
+		//Área de texto
+		label.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setBounds(90+100, 35+500, 80, 32);
+		
+		getContentPane().add(menos);
+		getContentPane().add(mais);
+		getContentPane().add(slider);
+		getContentPane().add(label);
+		//Cada bolinha	
+		for(int i=0; i<nAtomos; i++) {
+			int r, g=0, b=0;
+			if(i%9 == 0) {
+				r = 0;
+				g = 255;
+			}else {
+				r = 255;
+				g = 0;
+			}
+			panel[i] = new JPanel();
+			panel[i].setBorder(new LineBorder(new Color(r, g, b), 10, true));
+			panel[i].setBounds(150+i*10, 300, 10, 10);
+			getContentPane().add(panel[i]);
+			if(i == 0)
+				atomo[i] = new Motor(1.5);
+			else
+				atomo[i] = new Motor();
+		}
+	}
+	
+	public void actions() {
+		menos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				slider.setValue(slider.getValue() - 1);
+				double freq = slider.getValue();
+				label.setText(freq*3/100 + "Hz");
+				atomo[0].setFrequencia(freq*3/100);
+			}
+		});
+		
+		mais.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				slider.setValue(slider.getValue() + 1);
+				double freq = slider.getValue();
+				label.setText(freq*3/100 + "Hz");
+			}
+		});
+		
+		slider.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent event) {
+				double freq = slider.getValue();
+				label.setText(freq*3/100 + "Hz");
+			}
+
+		});
+	}
+	
+}
